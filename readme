@@ -1,0 +1,139 @@
+endpoint http://push_notifications_test.test/send
+
+request:
+
+{
+	"user_id" : 1,
+	"title" : "Some title",
+	"message" : "Some message"
+}
+
+response:
+
+{
+    "data": [
+        "Android true",
+        "IOs false"
+    ],
+    "message": "success",
+    "status": 1
+}
+
+endpoint http://push_notifications_test.test/mass_send
+
+request:
+
+{
+	"user_ids" : "1,2,3,4",
+	"title" : "Some title",
+	"message" : "Some message"
+}
+
+response:
+
+{
+    "data": [
+        "8",
+        "9",
+        "10",
+        "11"
+    ],
+    "message": "success",
+    "status": 1
+}
+
+endpoint:
+
+http://push_notifications_test.test/get
+
+request:
+
+{
+	"user_id" : 1,
+	"title" : "Some title",
+	"message" : "Some message"
+}
+
+response:
+
+{
+    "data": {
+        "notifications": [
+            {
+                "id": "12",
+                "user_id": "1",
+                "title": "Some title",
+                "message": "Some message",
+                "token": "lqfghlqefholqefhlqefh",
+                "device_type": "1",
+                "status": "1"
+            },
+            {
+                "id": "13",
+                "user_id": "1",
+                "title": "Some title",
+                "message": "Some message",
+                "token": "dfsgnsnrnrsnsrgnssrg",
+                "device_type": "2",
+                "status": "1"
+            },
+            {
+                "id": "15",
+                "user_id": "1",
+                "title": "Some title",
+                "message": "Some message",
+                "token": "lqfghlqefholqefhlqefh",
+                "device_type": "1",
+                "status": "1"
+            },
+            {
+                "id": "16",
+                "user_id": "1",
+                "title": "Some title",
+                "message": "Some message",
+                "token": "dfsgnsnrnrsnsrgnssrg",
+                "device_type": "2",
+                "status": "3"
+            },
+            {
+                "id": "18",
+                "user_id": "1",
+                "title": "Some title",
+                "message": "Some message",
+                "token": "lqfghlqefholqefhlqefh",
+                "device_type": "1",
+                "status": "1"
+            },
+            {
+                "id": "19",
+                "user_id": "1",
+                "title": "Some title",
+                "message": "Some message",
+                "token": "dfsgnsnrnrsnsrgnssrg",
+                "device_type": "2",
+                "status": "1"
+            }
+        ],
+        "count_of_in_progress": 5,
+        "count_of_sent": 0,
+        "count_of_failed": 1
+    },
+    "message": "success",
+    "status": 1
+}
+
+endpoint http://push_notifications_test.test/cron
+
+request:
+
+{}
+
+response:
+
+{
+    "data": [
+        "IOs true"
+    ],
+    "message": "success",
+    "status": 1
+}
